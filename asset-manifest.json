@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d423f213.css",
+    "main.js": "/static/js/main.c91fa525.js",
+    "static/media/pfp-noush.png": "/static/media/pfp-noush.aa5431b5d55f0be799b2.png",
+    "static/media/taylor-pfp.jpg": "/static/media/taylor-pfp.ec74cb1e976ce56f1098.jpg",
+    "static/media/H&M-Logo.png": "/static/media/H&M-Logo.163ebc174d45e57b3318.png",
+    "static/media/post3.jpg": "/static/media/post3.6440d41061b15588a3fd.jpg",
+    "static/media/Amazon_logo.png": "/static/media/Amazon_logo.1b5b780a2155c1ab6c26.png",
+    "static/media/post2.jpg": "/static/media/post2.ce0ab3408b5d295d9b0d.jpg",
+    "static/media/post1.png": "/static/media/post1.6f5b53a99af3ce8c8e6d.png",
+    "static/media/Binance-Logo.png": "/static/media/Binance-Logo.6c697d1c20971d244190.png",
+    "static/media/adarsh-pfp.jpg": "/static/media/adarsh-pfp.0f536a601b184bf6a6e9.jpg",
+    "index.html": "/index.html",
+    "main.d423f213.css.map": "/static/css/main.d423f213.css.map",
+    "main.c91fa525.js.map": "/static/js/main.c91fa525.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d423f213.css",
+    "static/js/main.c91fa525.js"
+  ]
+}

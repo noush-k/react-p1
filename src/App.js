@@ -4,12 +4,12 @@ import Sidebar from './components/Sidebar/SidebarIndex';
 import Feed from './components/Feed/FeedIndex';
 import Rightbar from './components/Rightbar/RightbarIndex';
 import { BrowserRouter as Router} from 'react-router-dom';
-import Navbar2 from './components/Navbar2/Navb';
+import Navbars from './components/Navbar2/Navb';
 
 function App() {
   return (
     <Router>
-      <Navbar2 />
+      <Navbars />
       <div className="homeContainer">
         <Sidebar />
         <Feed />

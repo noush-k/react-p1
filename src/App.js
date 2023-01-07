@@ -8,7 +8,7 @@ import Navbars from './components/Navbar2/Navb';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Navbars />
       <div className="homeContainer">
         <Sidebar />

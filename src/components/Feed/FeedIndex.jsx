@@ -1,117 +1,141 @@
 import "./feed.css";
+import InfiniteScroll from 'react-infinite-scroll-component';
+import pfp1 from "../../images/adarsh-pfp.jpg";
+import pfp2 from "../../images/pfp-noush.png";
+import pfp3 from "../../images/taylor-pfp.jpg";
+import pic1 from "../../images/post1.png";
+import pic2 from "../../images/post2.jpg";
+import pic3 from "../../images/post3.jpg";
+import likes from "../../images/like.png";
+import b_likes from "../../images/like-blue.png";
+import comment from "../../images/comments.png";
+import share from "../../images/share.png";
+import { useState } from "react";
+
+let data = [
+    {
+        id: 1,
+        username: "Anoushka Kondaskar",
+        userImg: pfp2,
+        postImg: pic1,
+        acc_url: "https://www.facebook.com/profile.php?id=100075959371130",
+        postText: "Maybe it's easier than than you think #dailymotivation #quotes",
+        likes: 218,
+        comments: 82,
+        shares: 56,
+        liked: false
+    },
+    {
+        id: 2,
+        username: "Adarsh Warrier",
+
+        userImg: pfp1,
+        postImg: pic2,
+        acc_url: "https://www.facebook.com/adarsh.warrier",
+        postText: "Maybe it's easier than you think #dailymotivation #quotes",
+        likes: 80,
+        comments: 43,
+        shares: 12,
+        liked: false
+    },
+    {
+        id: 3,
+        username: "Taylor Swift",
+        userImg: pfp3,
+        postImg: pic3,
+        acc_url: "https://www.facebook.com/TaylorSwift",
+        postText: "Maybe it's easier than than you think #dailymotivation #quotes",
+        likes: 148,
+        comments: 64,
+        shares: 33,
+        liked: false
+    }
+];
 
 export default function Feed() {
-    return(
-        <div className="feed">
-            <div className="feedWrapper">
-            <div class="post-container">
-          <div class="user-profile">
-            <button class="acc">
-              <a
-                href="https://www.facebook.com/profile.php?id=100075959371130"
-                target="_blank"
-              >
-                <img
-                  src="./images/pfp-noush.png"
-                  class="user"
-                />
-              </a>
-            </button>
-            <div>
-              <p class="name">Anoushka Kondaskar</p>
-              <h5>December 23 2022</h5>
-            </div>
-          </div>
-          <p class="post-text">
-            Maybe it's easier than than you think #dailymotivation #quotes
-          </p>
-          <img
-            src="./images/Hello Big Idea _ Brand + Marketing Agency.png"
-            class="pic"
-          />
-          <div class="post-row">
-            <div class="activity-icons">
-              <div>
-                <button class="like">
-                  <img src="./images/like.png" alt="" />
-                </button>
-                <div class="likeNum">218</div>
-              </div>
-              <div><img src="./images/comments.png" alt="" />82</div>
-              <div><img src="./images/share.png" alt="" />56</div>
-            </div>
-          </div>
-        </div>
+    const [posts,setPosts] = useState([...data]);
 
-        <div class="post-container">
-          <div class="user-profile">
-            <button class="acc">
-              <a href="https://www.facebook.com/adarsh.warrier" target="_blank">
-                <img src="./images/adarsh-pfp.jpg" class="user" />
-              </a>
-            </button>
-            <div>
-              <p class="name">Adarsh Warrier</p>
-              <h5>December 17 2022</h5>
-            </div>
-          </div>
-          <p class="post-text">
-            Maybe it's easier than than you think #dailymotivation #quotes
-          </p>
-          <img src="./images/download.jpg" class="pic" />
-          <div class="post-row">
-            <div class="activity-icons">
-              <div>
-                <button class="like">
-                  <img src="./images/like.png" alt="" />
-                </button>
-                <div class="likeNum">80</div>
-              </div>
-              <div><img src="./images/comments.png" alt="" />43</div>
-              <div><img src="./images/share.png" alt="" />12</div>
-            </div>
-          </div>
-        </div>
 
-        <div class="post-container">
-          <div class="user-profile">
-            <button class="acc">
-              <a
-                href="https://www.facebook.com/profile.php?id=100075959371130"
-                target="_blank"
-              >
-                <img
-                  src="./images/beach photooo noushhh.png"
-                  class="user"
-                />
-              </a>
-            </button>
-            <div>
-              <p class="name">Anoushka Kondaskar</p>
-              <h5>December 9 2022</h5>
-            </div>
-          </div>
-          <p class="post-text">
-            Maybe it's easier than than you think #dailymotivation #quotes
-          </p>
-          <img
-            src="./images/What if it all goes right_ Colourful typography design @caramillsdesign.jpg"
-            class="pic"
-          />
-          <div class="post-row">
-            <div class="activity-icons">
+    const fetchData = () => {
+        setTimeout(() => {
+            setPosts([...posts,...data]);
+        }, 1500);
+    }
+
+    const handleLike = (index) => {
+        const data = [...posts];
+
+        data[index].liked = !data[index].liked;
+
+        if(data[index].liked) {
+            data[index].likes += 1;
+
+        }
+        else {
+            data[index].likes -= 1;
+        }
+
+        setPosts(data);
+    }
+
+  return (
+    <div className="feed">
+      <div className="feedWrapper">
+      <InfiniteScroll
+  dataLength={posts.length} //This is important field to render the next data
+  next={fetchData}
+  hasMore={true}
+  loader={<h4>Loading...</h4>}
+  endMessage={
+    <p style={{ textAlign: 'center' }}>
+      <b>Yay! You have seen it all</b>
+    </p>
+  }
+
+>
+        {posts.map((d,index) => (
+            <div key={index} className="post-container">
+            <div className="user-profile">
+              <button className="acc">
+                <a href={d.acc_url} target="_blank">
+                  <img src={d.userImg} className="user" />
+                </a>
+              </button>
               <div>
-                <button class="like">
-                  <img src="./images/like.png" />
-                </button>
-                <div class="likeNum">50</div>
+                <p className="name">{d.username}</p>
+                <h5>December 27 2022</h5>
               </div>
-              <div><img src="./images/comments.png" />13</div>
-              <div><img src="./images/share.png" />6</div>
+            </div>
+            <p className="post-text">
+              {d.postText}
+            </p>
+            <img src={d.postImg} className="pic" />
+            <div className="post-row">
+              <div className="activity-icons">
+                <div>
+                  <button className="like-button" onClick={() => handleLike(index)}>
+                    <img src={d.liked ? b_likes : likes} alt="" />
+                  </button>
+                  <div className="likeNum">{d.likes}</div>
+                </div>
+                <div>
+                  <img src={comment} alt="" />
+                  {d.comments}
+                </div>
+                <div>
+                  <img src={share} alt="" />
+                  {d.shares}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-            </div>
-        </div>
-    )
+            ))}
+
+        </InfiniteScroll>
+
+        
+      </div>
+    </div>
+  );
 }
+

@@ -7,12 +7,16 @@
 }
 
 .sidebarWrapper{
+    display: flex;
+    align-items: flex-start;
     padding: 20px;
-    height: 100%;
+    margin-top: 20px;
+    height: 73%;
+    width: 22%;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-    position: sticky;
+    position: fixed;
 
 }
 
@@ -31,7 +35,7 @@
     color: rgb(78, 85, 97);
     width: fit-content;
     font: normal medium 12px/9px "Roboto", sans-serif;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .imp-links svg{
@@ -39,7 +43,7 @@
     height: 40px;
     color: #2596be;
     padding-top: 10px;
-    padding-bottom: 6px;
+    padding-bottom: 2px;
     align-items: left;
 }
 

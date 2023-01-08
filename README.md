@@ -1,4 +1,4 @@
-##View in 80% webpage size for bext results
+## View in 90% webpage size for bext results
 
 # Getting Started with Create React App
 

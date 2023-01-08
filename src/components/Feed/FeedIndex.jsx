@@ -87,7 +87,7 @@ export default function Feed() {
   dataLength={posts.length} //This is important field to render the next data
   next={fetchData}
   hasMore={true}
-  loader={<h4>Loading...</h4>}
+  loader={<h4>Loading more posts for you...</h4>}
   endMessage={
     <p style={{ textAlign: 'center' }}>
       <b>Yay! You have seen it all</b>

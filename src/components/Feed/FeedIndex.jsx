@@ -3,9 +3,11 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import pfp1 from "../../images/adarsh-pfp.jpg";
 import pfp2 from "../../images/pfp-noush.png";
 import pfp3 from "../../images/taylor-pfp.jpg";
-import pic1 from "../../images/post1.png";
-import pic2 from "../../images/post2.jpg";
+//import pic1 from "../../images/post1.png";
+//import pic2 from "../../images/post2.jpg";
 import pic3 from "../../images/post3.jpg";
+import pic4 from "../../images/post4.png";
+import pic5 from "../../images/post5.jfif";
 import likes from "../../images/like.png";
 import b_likes from "../../images/like-blue.png";
 import comment from "../../images/comments.png";
@@ -17,7 +19,7 @@ let data = [
         id: 1,
         username: "Anoushka Kondaskar",
         userImg: pfp2,
-        postImg: pic1,
+        postImg: pic4,
         acc_url: "https://www.facebook.com/profile.php?id=100075959371130",
         postText: "Maybe it's easier than than you think #dailymotivation #quotes",
         likes: 218,
@@ -30,7 +32,7 @@ let data = [
         username: "Adarsh Warrier",
 
         userImg: pfp1,
-        postImg: pic2,
+        postImg: pic3,
         acc_url: "https://www.facebook.com/adarsh.warrier",
         postText: "Take the leap! #dailymotivation #quotes",
         likes: 80,
@@ -42,7 +44,7 @@ let data = [
         id: 3,
         username: "Taylor Swift",
         userImg: pfp3,
-        postImg: pic3,
+        postImg: pic5,
         acc_url: "https://www.facebook.com/TaylorSwift",
         postText: "Food for thought #midnights #dailymotivation #quotes",
         likes: 148,
